@@ -7,13 +7,31 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Light Theme (default) */
+    body.light-theme {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* Dark Theme */
+    body.dark-theme {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
     }
 
     .header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 10px 20px;
       background-color: #f8f8f8;
+    }
+
+    .dark-theme .header {
+      background-color: #333;
     }
 
     .header img {
@@ -38,30 +56,6 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
-</head>
-<body>
+      width:
 
-  <div class="header">
-    <img 
-      src="headerlogo1.png" 
-      alt="StobieCompany">
-  </div>
-
-  <div class="video-container">
-    <iframe 
-      src="https://drive.google.com/file/d/1ca5vc_DKsXwk0BnkHnLlL7K91MF4pTsp/preview" 
-      width="1920" 
-      height="1080" 
-      allow="autoplay; fullscreen" 
-  allowfullscreen>
-    </iframe>
-  </div>
-
-</body>
-</html>
 
