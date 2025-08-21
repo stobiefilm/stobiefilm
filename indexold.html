@@ -10,13 +10,11 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Light Theme (default) */
     body.light-theme {
       background-color: #ffffff;
       color: #000000;
     }
 
-    /* Dark Theme */
     body.dark-theme {
       background-color: #1e1e1e;
       color: #f1f1f1;
@@ -61,11 +59,16 @@
       border: 0;
     }
 
-    /* Theme Toggle Switch */
     .theme-toggle {
       display: flex;
       align-items: center;
       gap: 8px;
+      color: #000;
+      font-size: 14px;
+    }
+
+    .dark-theme .theme-toggle {
+      color: #fff;
     }
 
     .theme-toggle input[type="checkbox"] {
@@ -73,6 +76,7 @@
       height: 20px;
       appearance: none;
       background: #ccc;
+      border: 1px solid #666;
       border-radius: 20px;
       position: relative;
       cursor: pointer;
@@ -104,8 +108,7 @@
 <body class="light-theme">
 
   <div class="header">
-    <img src="headerlogo1.png" alt="StobieCompany">
-
+    <img id="logo" src="headerlogo1.png" alt="StobieCompany">
     <div class="theme-toggle">
       <label for="themeSwitch">Dark Mode</label>
       <input type="checkbox" id="themeSwitch">
@@ -125,22 +128,32 @@
   <script>
     const toggle = document.getElementById('themeSwitch');
     const body = document.body;
+    const logo = document.getElementById('logo');
 
-    // Load saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.remove('light-theme');
-      body.classList.add('dark-theme');
-      toggle.checked = true;
+    // Helper function to update logo based on theme
+    function updateLogo(theme) {
+      logo.src = theme === 'dark' ? 'headerlogo2.png' : 'headerlogo1.png';
     }
 
-    toggle.addEventListener('change', () => {
-      body.classList.toggle('dark-theme');
-      body.classList.toggle('light-theme');
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.replace('light-theme', 'dark-theme');
+      toggle.checked = true;
+      updateLogo('dark');
+    } else {
+      updateLogo('light');
+    }
 
-      // Save preference
-      const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
-      localStorage.setItem('theme', currentTheme);
+    // Toggle theme + update logo
+    toggle.addEventListener('change', () => {
+      const isDark = toggle.checked;
+      body.classList.toggle('dark-theme', isDark);
+      body.classList.toggle('light-theme', !isDark);
+
+      const newTheme = isDark ? 'dark' : 'light';
+      updateLogo(newTheme);
+      localStorage.setItem('theme', newTheme);
     });
   </script>
 
