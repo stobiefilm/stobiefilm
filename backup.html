@@ -92,12 +92,31 @@
       font-size: 2rem;
     }
 
+    /* Responsive video container */
     .video-container {
       position: relative;
       width: 100%;
-      max-width: 1920px;
+      max-width: 100%;
       margin: 20px auto;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      padding-top: 28.125%; /* 16:9 Aspect Ratio */
+    }
+
+    @media (min-width: 600px) {
+      .video-container {
+        max-width: 480px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .video-container {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .video-container {
+        max-width: 1080px;
+      }
     }
 
     .video-container iframe {
@@ -138,8 +157,9 @@
       <input type="checkbox" id="themeSwitch">
     </div>
   </div>
+  <header> test </header>
 
-  <!-- Updated video embed -->
+  <!-- Responsive video embed -->
   <div class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/WdJblpADIbU?si=0JmEWTx4ee91NnUW"
