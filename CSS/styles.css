@@ -1,0 +1,1724 @@
+/* ============================= */
+/* Reset */
+/* ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ============================= */
+/* Global */
+/* ============================= */
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    color: white;
+
+}
+
+
+
+/* ============================= */
+/* Animations */
+/* ============================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* ============================= */
+/* Navigation Bar */
+/* ============================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+    padding: 30px 60px;
+
+
+    z-index: 1000;
+
+}
+
+
+
+/* Logo */
+
+.logo {
+
+    width: 112px;
+
+    height: auto;
+
+}
+
+
+
+/* Navigation Buttons */
+
+.nav-buttons {
+
+    display: flex;
+
+    gap: 0px;
+
+}
+
+
+
+.nav-button {
+
+    height: 85px;
+
+    width: 85px;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    text-decoration: none;
+
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+
+    color: white;
+
+
+    background: transparent;
+
+    border: none;
+
+
+    transition:
+
+        background-color .5s ease-out,
+
+        color .5s ease-out,
+
+        transform .5s ease-out;
+
+}
+
+
+
+/* Vintage Polaroid Hover Colours */
+
+.work-button:hover {
+
+    color: black;
+
+    background: #C96F4A;
+
+    transform: scale(1.03);
+
+    transition-duration: .15s;
+
+}
+
+
+
+.creative:hover {
+
+    color: black;
+
+    background: #5465d4;
+
+    transform: scale(1.03);
+
+    transition-duration: .15s;
+
+}
+
+.scope-button:hover {
+
+    color: black;
+
+    background: #6C8FA3;
+
+    transform: scale(1.03);
+
+    transition-duration: .15s;
+
+}
+
+.events-button:hover {
+
+    color: black;
+
+    background: #825ad8;
+
+    transform: scale(1.03);
+
+    transition-duration: .15s;
+
+}
+
+.about-button:hover 
+
+{
+
+    color: black;
+
+    background: #D8B65A;
+
+    transform: scale(1.03);
+
+    transition-duration: .15s;
+
+}
+
+
+
+/* Creative dropdown */
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    background: black;
+
+    padding: 10px;
+
+    min-width: 150px;
+
+}
+
+
+.dropdown-menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px;
+
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+.dropdown-menu a:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+/* Show dropdown on hover */
+
+.dropdown:hover .dropdown-menu {
+
+    display: flex;
+
+}
+
+.dropdown.open .dropdown-menu {
+    display: flex;
+}
+
+/* ============================= */
+/* Global Page Typography */
+/* ============================= */
+
+
+.page-title {
+
+    font-size: clamp(5rem, 10vw, 8rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: .95;
+
+    color: white;
+
+}
+
+
+.page-subtitle {
+
+    margin-top: 5px;
+
+    margin-left: 10px;
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    line-height: 1.6;
+
+    color: white;
+
+}
+
+.page-content {
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:0 8vw;
+
+}
+
+/* ============================= */
+/* Page Load Animation */
+/* ============================= */
+
+@keyframes pageFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.page-title,
+.home-content,
+.section-subtitle {
+
+    animation: pageFadeIn 1s ease-out forwards;
+
+}
+
+/*section arrow*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================= */
+/* Nav Words */
+/* ============================= */
+
+.section-nav {
+
+    position: fixed;
+
+    left: 45px;
+
+    bottom: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    z-index: 1000;
+
+}
+
+
+.section-link {
+
+    display: block;
+
+    padding-left: 20px;
+
+    height: 20px;
+
+    line-height: 20px;
+
+    color: rgba(255,255,255,.4);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 0.8rem;
+
+    letter-spacing: .18em;
+
+}
+
+
+.section-link.active {
+
+    color: white;
+
+}
+
+.section-link:hover {
+    letter-spacing: .2em;
+    transition: .2s ease;
+}
+
+
+.section-indicator {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 6px;
+
+    height: 6px;
+
+    background: rgb(255, 255, 255);
+
+    border-radius: 1px;
+
+    transition: top .45s cubic-bezier(.16,1,.3,1);
+
+    z-index: 10;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+/* ============================= */
+/* Home Section */
+/* ============================= */
+
+.home {
+
+    min-height: 100vh;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    padding: 0 8vw;
+
+
+    position: relative;
+
+
+    overflow: hidden;
+
+
+    z-index: 1;
+
+}
+
+
+
+/* Home Video */
+
+.home-video {
+
+    position: absolute;
+
+
+    inset: 0;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    object-fit: cover;
+
+
+    z-index: -2;
+
+}
+
+
+
+/* Home Overlay */
+
+.home-overlay {
+
+    position: absolute;
+
+
+    inset: 0;
+
+
+    background: rgba(0,0,0,.35);
+
+
+    z-index: -1;
+
+}
+
+
+
+/* Home Content */
+
+.home-content {
+
+    max-width: 700px;
+
+}
+
+
+
+/* ============================= */
+/* Global Headings */
+/* ============================= */
+
+h1 {
+
+    font-size: clamp(5rem, 10vw, 8rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: .95;
+
+    color: white;
+
+}
+
+
+
+/* ============================= */
+/* Section Subtitle */
+/* ============================= */
+
+.section-subtitle {
+
+    margin-top: 5px;
+
+    margin-left: 10px;
+
+    max-width: 600px;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    line-height: 1.6;
+
+    letter-spacing: .5px;
+
+    text-transform: capitalize;
+
+    color: rgb(255, 255, 255);
+
+}
+
+
+
+/* ============================= */
+/* Promotions Section */
+/* ============================= */
+
+.promotions {
+
+    min-height: 100vh;
+
+
+    width: 100%;
+
+
+    background: black;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    padding: 0 8vw;
+
+
+    position: relative;
+
+
+    z-index: 1;
+
+}
+
+
+
+.promotions-content {
+
+    width: 100%;
+
+}
+
+
+
+.promotions h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+
+    font-weight: 800;
+
+
+    letter-spacing: -3px;
+
+
+    line-height: .95;
+
+
+    color: white;
+
+}
+
+
+
+/* ============================= */
+/* Photography Section */
+/* ============================= */
+
+.photography {
+
+    min-height: 100vh;
+
+
+    width: 100%;
+
+
+    background: #111;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    padding: 0 8vw;
+
+
+    position: relative;
+
+
+    z-index: 1;
+
+}
+
+
+
+.photography-content {
+
+    width: 100%;
+
+}
+
+
+
+.photography h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+
+    font-weight: 800;
+
+
+    letter-spacing: -3px;
+
+
+    line-height: .95;
+
+
+    color: white;
+
+}
+
+
+
+/* ============================= */
+/* Sound Section */
+/* ============================= */
+
+.sound {
+
+    min-height: 100vh;
+
+
+    width: 100%;
+
+
+    background: black;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    padding: 0 8vw;
+
+
+    position: relative;
+
+
+    z-index: 1;
+
+}
+
+
+
+.sound-content {
+
+    width: 100%;
+
+}
+
+
+
+.sound h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+
+    font-weight: 800;
+
+
+    letter-spacing: -3px;
+
+
+    line-height: .95;
+
+
+    color: white;
+
+}
+
+
+
+/* ============================= */
+/* Events Section */
+/* ============================= */
+
+.events {
+
+    min-height: 100vh;
+
+
+    width: 100%;
+
+
+    background: #111;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    padding: 0 8vw;
+
+
+    position: relative;
+
+
+    z-index: 1;
+
+}
+
+
+
+.events-content {
+
+    width: 100%;
+
+}
+
+
+
+.events h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+
+    font-weight: 800;
+
+
+    letter-spacing: -3px;
+
+
+    line-height: .95;
+
+
+    color: white;
+
+}
+
+/* ============================= */
+/* Film Sections */
+/* ============================= */
+
+
+.film-one,
+.film-two,
+.film-three {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 8vw;
+
+    position: relative;
+
+    background-color: black;
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: 1;
+
+}
+
+
+
+/* Background Images */
+
+
+.film-one {
+
+    background-image: url("images/film1.jpg");
+
+}
+
+
+.film-two {
+
+    background-image: url("images/film2.jpg");
+
+}
+
+
+.film-three {
+
+    background-image: url("images/film3.jpg");
+
+}
+
+
+
+/* Dark Overlay */
+
+
+.film-one::before,
+.film-two::before,
+.film-three::before {
+
+    content: "";
+
+    position: absolute;
+
+
+    inset: 0;
+
+
+    background: rgba(0,0,0,.45);
+
+
+    z-index: -1;
+
+}
+
+
+
+/* Film Content */
+
+
+.film-content {
+
+    width: 45%;
+
+    flex-shrink: 0;
+
+}
+
+
+/* Move Film One Text Up */
+
+.film-one .film-content {
+
+    transform: translateY(-120px);
+
+}
+
+
+
+.film-one h1,
+.film-two h1,
+.film-three h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+
+    font-weight: 800;
+
+
+    letter-spacing: -3px;
+
+
+    line-height: .95;
+
+
+    color: white;
+
+}
+
+/* ============================= */
+/* Film Video Container */
+/* ============================= */
+
+
+.film-one {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 5vw;
+
+}
+
+
+
+.film-video-container {
+
+    width: 45vw;
+
+    max-width: 850px;
+
+    aspect-ratio: 16 / 9;
+
+    flex-shrink:0;
+
+    overflow: hidden;
+
+}
+
+
+
+.film-video-container video {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+/* ============================= */
+/* Scroll Arrow */
+/* ============================= */
+
+.scroll-arrow {
+
+    position: absolute;
+    bottom: 40px;
+    left: 8vw;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    animation: arrowBounce 2s infinite;
+
+    cursor: pointer;
+
+}
+
+
+
+@keyframes arrowBounce {
+
+
+    0%, 100% {
+
+        transform: translateY(0);
+
+    }
+
+
+    50% {
+
+        transform: translateY(10px);
+
+    }
+
+
+}
+
+/* ============================= */
+/* About Page */
+/* ============================= */
+
+.about-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: black;
+
+    z-index: -1;
+
+}
+
+/* ============================= */
+/* About Heading */
+/* ============================= */
+
+.about-content h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: .95;
+
+    color: white;
+
+}
+
+/* ============================= */
+/* About Paragraph */
+/* ============================= */
+
+.about-content p {
+
+    max-width: 750px;
+
+    margin-top: 30px;
+
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+
+    color: white;
+
+}
+
+/* ============================= */
+/* About Content */
+/* ============================= */
+
+.about-content {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0 8vw;
+
+}
+
+/* ============================= */
+/* Work Page */
+/* ============================= */
+
+.work-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: black;
+
+    z-index: -1;
+
+}
+
+/* ============================= */
+/* Work Content */
+/* ============================= */
+
+.work-content {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0 8vw;
+
+}
+
+/* ============================= */
+/* Work Heading */
+/* ============================= */
+
+.work-content h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: .95;
+
+    color: white;
+
+}
+
+/* ============================= */
+/* Work Paragraph */
+/* ============================= */
+
+.work-content p {
+
+    max-width: 750px;
+
+    margin-top: 30px;
+
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+
+    color: white;
+
+}
+
+
+/* ============================= */
+/* Film Gallery */
+/* ============================= */
+
+
+.film-gallery {
+
+    background: black;
+
+    padding: 100px 8vw;
+
+}
+
+
+.film-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8vw;
+
+    padding: 100px 0;
+
+    border-top: 1px solid rgba(255,255,255,.35);
+
+    text-decoration: none;
+
+    color: white;
+
+}
+
+
+
+.film-card:last-child {
+
+    border-bottom: 1px solid rgba(255,255,255,.35);
+
+}
+
+
+
+.film-card img {
+
+    width: 320px;
+
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+
+    transition: transform .3s ease;
+
+}
+
+
+
+.film-card img:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.film-info {
+
+    flex: 1;
+
+}
+
+
+
+.film-info h2 {
+
+    font-size: clamp(3rem,5vw,5rem);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+}
+
+
+
+.film-info p {
+
+    margin-top: 15px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    opacity: .7;
+
+}
+
+
+
+/* Alternate layouts */
+
+
+.film-card.reverse {
+
+    flex-direction: row-reverse;
+
+    text-align: right;
+
+}
+
+/* ============================= */
+/* Film Page */
+/* ============================= */
+
+
+.film-hero {
+
+    min-height:100vh;
+
+    background:black;
+
+    padding:180px 8vw 100px;
+
+}
+
+
+
+.film-title h1 {
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    letter-spacing:-3px;
+
+}
+
+
+
+.film-description {
+
+    max-width:600px;
+
+    margin-top:30px;
+
+    font-size:1.3rem;
+
+    line-height:1.5;
+
+}
+
+
+
+.film-showcase {
+
+    display:flex;
+
+    gap:5vw;
+
+    align-items:center;
+
+    margin-top:80px;
+
+}
+
+
+
+.film-poster {
+
+    width:320px;
+
+    aspect-ratio:2/3;
+
+    object-fit:cover;
+
+}
+
+
+
+.film-trailer {
+
+    width:55vw;
+
+    max-width:900px;
+
+}
+
+
+.film-trailer video {
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:contain;
+
+}
+
+
+
+.film-details {
+
+    display:flex;
+
+    gap:80px;
+
+    margin-top:80px;
+
+}
+
+
+
+.film-section {
+
+    min-height:60vh;
+
+    padding:100px 8vw;
+
+    background:#111;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+.film-section h2 {
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    margin-bottom:40px;
+
+}
+
+
+
+.still-gallery {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.still-gallery img {
+
+    width:100%;
+
+}
+
+/* ============================= */
+/* HB Film Page */
+/* ============================= */
+
+
+.film-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: black;
+
+    z-index: -1;
+
+}
+
+
+
+/* Film Page Wrapper */
+
+
+.hb-content {
+
+    padding-top:140px;
+
+}
+
+
+
+/* Hero */
+
+
+.hb-hero {
+
+    min-height: 100vh;
+
+    padding: 40px 8vw 100px;
+
+}
+
+
+
+/* Heading */
+
+
+.hb-heading h1 {
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: .95;
+
+}
+
+
+
+.hb-summary {
+
+    max-width: 600px;
+
+    margin-top: 30px;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* Poster + Trailer */
+
+
+.hb-showcase {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6vw;
+
+    margin-top: 80px;
+
+}
+
+
+
+.hb-poster {
+
+    width: 320px;
+
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+
+}
+
+
+
+.trailer-container {
+
+    width: 55vw;
+
+    max-width: 900px;
+
+}
+
+
+
+.trailer-container video {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+
+/* Details */
+
+
+.hb-details {
+
+    display: flex;
+
+    gap: 80px;
+
+    margin-top: 80px;
+
+}
+
+
+
+.hb-details h3 {
+
+    font-size: .9rem;
+
+    text-transform: uppercase;
+
+    opacity: .6;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.hb-details p {
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+}
+
+
+
+/* Lower Sections */
+
+
+.hb-section {
+
+    min-height: 70vh;
+
+    padding: 100px 8vw;
+
+    background: #111;
+
+    border-top: 1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+.hb-section h2 {
+
+    font-size: clamp(3rem,6vw,5rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.hb-section p {
+
+    max-width: 700px;
+
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* Gallery */
+
+
+.still-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+
+.still-gallery img {
+
+    width: 100%;
+
+}
+
+
+
+/* Mobile */
+
+
+@media (max-width: 900px) {
+
+
+    .film-showcase {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .trailer-container {
+
+        width: 100%;
+
+    }
+
+
+    .film-details {
+
+        flex-direction: column;
+
+        gap: 30px;
+
+    }
+
+
+    .still-gallery {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+}
