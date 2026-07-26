@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stobie</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- Section Navigation -->
+
+<nav class="section-nav">
+
+    <div class="section-indicator"></div>
+
+    <a href="#home" class="section-link active">film</a>
+
+    <a href="#promotions" class="section-link">promotions</a>
+
+    <a href="#photography" class="section-link">photography</a>
+
+    <a href="#sound" class="section-link">sound</a>
+
+    <a href="#events" class="section-link">events</a>
+
+</nav>
+
+
+
+<!-- Main Navigation -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo-link">
+
+        <img
+        src="images/headerlogo2.png"
+        alt="Logo"
+        class="logo"
+        data-sound="audio/logo.wav">
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+
+        <a href="work.html"
+        class="nav-button work-button"
+        data-sound="audio/button.mp3">
+        work
+        </a>
+
+
+        <a href="scope.html"
+        class="nav-button scope-button"
+        data-sound="audio/button.mp3">
+        scope
+        </a>
+
+
+
+        <div class="dropdown">
+
+            <a
+            id="nav-button-creative"
+            class="nav-button creative"
+            data-sound="audio/button.mp3">
+            creative
+            </a>
+
+
+            <div class="dropdown-menu">
+
+                <a href="stobiefilm.html">film</a>
+
+                <a href="stobiestill.html">photography</a>
+
+                <a href="stobiesound.html">sound</a>
+
+            </div>
+
+        </div>
+
+
+
+        <a href="events.html"
+        class="nav-button events-button"
+        data-sound="audio/button.mp3">
+        events
+        </a>
+
+
+
+        <a href="about.html"
+        class="nav-button about-button"
+        data-sound="audio/button.mp3">
+        about
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+
+
+
+<main>
+
+
+<section class="home" id="home">
+
+
+   <video autoplay muted loop playsinline class="home-video">
+    <source src="https://stobie.b-cdn.net/background.mp4" type="video/mp4">
+</video>
+
+
+    <div class="home-overlay"></div>
+
+
+    <div class="home-content">
+
+        <h1>StobieFilm</h1>
+
+        <p class="section-subtitle">
+            Film production and visual storytelling.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<section class="promotions" id="promotions">
+
+
+    <video autoplay muted loop playsinline class="home-video">
+
+        <source src="https://stobie.b-cdn.net/workbackground.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="home-overlay"></div>
+
+    <div class="promotions-content">
+
+        <h1>Promotions</h1>
+
+        <p class="section-subtitle">
+            Creative campaigns, branded content and promotional media.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<section class="photography" id="photography">
+
+    <video autoplay muted loop playsinline class="home-video">
+
+        <source src="https://stobie.b-cdn.net/stillbackground.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="home-overlay"></div>
+
+    <div class="photography-content">
+
+        <h1>StobieStill</h1>
+
+        <p class="section-subtitle">
+            Photography capturing people, places and moments.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<section class="sound" id="sound">
+
+    <video autoplay muted loop playsinline class="home-video">
+
+        <source src="https://stobie.b-cdn.net/soundbackground.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="home-overlay"></div>
+
+    <div class="sound-content">
+
+        <h1>StobieSound</h1>
+
+        <p class="section-subtitle">
+            Sound engineering, recording and audio production.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<section class="events" id="events">
+
+
+    <div class="events-content">
+
+        <h1>StobieEvents</h1>
+
+        <p class="section-subtitle">
+            Event coverage, experiences and live storytelling.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<script src="js/audio.js"></script>
+
+
+<script>
+
+
+const sections = document.querySelectorAll("main section");
+
+const links = document.querySelectorAll(".section-link");
+
+const indicator = document.querySelector(".section-indicator");
+
+
+
+function moveIndicator(link) {
+
+
+    if (!link) return;
+
+
+    const nav = document.querySelector(".section-nav");
+
+
+    const linkTop =
+        link.offsetTop +
+        (link.offsetHeight / 2) -
+        (indicator.offsetHeight / 2);
+
+
+    indicator.style.top = linkTop + "px";
+
+
+}
+
+
+
+function updateNavigation() {
+
+
+    let current = "";
+
+
+    sections.forEach(section => {
+
+
+        const sectionTop = section.offsetTop - 200;
+
+
+        if(window.scrollY >= sectionTop){
+
+            current = section.id;
+
+        }
+
+
+    });
+
+
+
+    links.forEach(link => {
+
+
+        link.classList.remove("active");
+
+
+
+        if(link.getAttribute("href") === "#" + current){
+
+
+            link.classList.add("active");
+
+            moveIndicator(link);
+
+
+        }
+
+
+    });
+
+
+}
+
+
+
+window.addEventListener("scroll", updateNavigation);
+
+
+
+window.addEventListener("load", () => {
+
+
+    updateNavigation();
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

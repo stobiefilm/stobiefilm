@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hollywood Boulevard</title>
+
+    <!-- Main shared styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- HB only styles -->
+    <link rel="stylesheet" href="css/hb.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo-link">
+
+        <img
+            src="images/headerlogo2.png"
+            alt="Logo"
+            class="logo"
+            data-sound="audio/logo.wav"
+        >
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+
+        <a
+            href="work.html"
+            class="nav-button work-button"
+            data-sound="audio/button.mp3"
+        >
+            work
+        </a>
+
+
+        <div class="dropdown">
+
+            <a
+                id="nav-button-creative"
+                class="nav-button creative"
+                data-sound="audio/button.mp3"
+            >
+                creative
+            </a>
+
+
+            <div class="dropdown-menu">
+
+                <a href="stobiefilm.html">film</a>
+
+                <a href="stobiestill.html">photography</a>
+
+                <a href="stobiesound.html">sound</a>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="events.html"
+            class="nav-button events-button"
+            data-sound="audio/button.mp3"
+        >
+            events
+        </a>
+
+
+        <a
+            href="about.html"
+            class="nav-button about-button"
+            data-sound="audio/button.mp3"
+        >
+            about
+        </a>
+
+
+    </div>
+
+
+</nav>
+
+<main class="hb-page">
+
+
+<section class="hb-hero">
+
+
+<div class="hb-video-container">
+
+    <iframe
+        id="hb-video"
+        class="hb-video"
+        src="https://player.mediadelivery.net/embed/713840/08254ac1-d6b9-4ac3-ab86-4a51f7526062?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+        loading="lazy"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+
+    <div class="hb-title">
+
+        <h1>
+            Hollywood<br>
+            Boulevard
+        </h1>
+
+        <p>
+            2023 · Dark Comedy
+        </p>
+
+    </div>
+
+
+</section>
+
+<section class="hb-credits">
+
+
+    <div class="hb-synopsis">
+
+        <h2>
+            Synopsis
+        </h2>
+
+        <p>
+            A filmmaker's early 30's crisis, when he re-evaluates his life long passion.
+        </p>
+
+    </div>
+
+
+
+    <div class="hb-credit-grid">
+
+
+        <div class="hb-credit-item">
+
+            <h3>
+                Director
+            </h3>
+
+            <p>
+                Josh Thompson
+            </p>
+
+        </div>
+
+
+
+        <div class="hb-credit-item">
+
+            <h3>
+                Writer
+            </h3>
+
+            <p>
+                Josh Thompson
+            </p>
+
+        </div>
+
+
+
+        <div class="hb-credit-item">
+
+            <h3>
+                Producer
+            </h3>
+
+            <p>
+                Josh Thompson
+            </p>
+
+        </div>
+
+
+
+        <div class="hb-credit-item">
+
+            <h3>
+                Runtime
+            </h3>
+
+            <p>
+                8 Minutes
+            </p>
+
+        </div>
+
+
+
+        <div class="hb-credit-item">
+
+            <h3>
+                Year
+            </h3>
+
+            <p>
+                2023
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+<!-- About Section -->
+
+<section class="hb-directors-note">
+
+    <div class="hb-note-content">
+
+        <h2>
+            Director's Note
+        </h2>
+
+        <p>
+            Hollywood Boulevard was truly an experiment of self confidence. Truth is I had a huge fear of being on screen. The challenge then to endeavor an otherwise group activity, as a solo project, was just exciting enough to sink my teeth into. It also helps I've never found it challenging to make myself look like a clown to make my mates laugh.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Gallery Section -->
+
+<section class="hb-gallery">
+
+</section>
+
+</main>
+
+<script src="https://assets.mediadelivery.net/playerjs/playerjs-latest.min.js"></script>
+
+<script>
+const title = document.querySelector(".hb-title");
+const iframe = document.getElementById("hb-video");
+
+const player = new playerjs.Player(iframe);
+
+player.on("ready", () => {
+
+    player.on("play", () => {
+        title.classList.add("hide");
+    });
+
+    player.on("pause", () => {
+        title.classList.remove("hide");
+    });
+
+    player.on("ended", () => {
+        title.classList.remove("hide");
+    });
+
+});
+</script>
+
+</body>
+
+</html>
