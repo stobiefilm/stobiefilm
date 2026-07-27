@@ -1709,16 +1709,9 @@ h1 {
         grid-template-columns: 1fr;
     }
 
-
     /* ============================= */
     /* Homepage */
     /* ============================= */
-
-    /* Hide left section navigation */
-
-    .section-nav {
-        display: none;
-    }
 
     /* Smaller navbar */
 
