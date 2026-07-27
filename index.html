@@ -374,6 +374,18 @@ document.querySelectorAll(".section-link").forEach(link => {
 
 });
 
+const creativeButton = document.querySelector(".creative");
+const dropdown = document.querySelector(".dropdown");
+
+
+creativeButton.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    dropdown.classList.toggle("open");
+
+});
+
 </script>
 
 
