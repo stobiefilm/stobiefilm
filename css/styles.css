@@ -94,8 +94,9 @@ body {
 
 .logo {
     display: block;
-    max-width: 100%;
+    max-width: 112px;
     height: auto;
+    object-fit: contain;
 }
 
 
@@ -1678,5 +1679,3 @@ h1 {
     width: 100%;
 
 }
-
-
