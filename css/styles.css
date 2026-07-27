@@ -1689,61 +1689,131 @@ h1 {
 
 @media (max-width: 900px) {
 
-    /* Existing */
+
+    /* ============================= */
+    /* Existing Pages */
+    /* ============================= */
+
 
     .film-showcase {
+
         flex-direction: column;
+
         align-items: flex-start;
+
     }
+
 
     .trailer-container {
+
         width: 100%;
+
     }
+
 
     .film-details {
+
         flex-direction: column;
+
         gap: 30px;
+
     }
+
 
     .still-gallery {
+
         grid-template-columns: 1fr;
+
     }
 
+
+
     /* ============================= */
-    /* Homepage */
+    /* Navigation */
     /* ============================= */
 
-    /* Smaller navbar */
 
     .navbar {
+
         padding: 20px;
+
     }
+
 
     .logo {
-        height: 34px;
+
+        height: 38px;
+
     }
+
 
     .nav-buttons {
+
         gap: 8px;
+
     }
+
 
     .nav-button {
-        width: 56px;
-        height: 56px;
-        font-size: 0.8rem;
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: .75rem;
+
     }
 
-    /* Hero sections */
+
+
+    /* Section Navigation */
+
+    .section-nav {
+
+        left: 20px;
+
+        top: 50%;
+
+    }
+
+
+    .section-link {
+
+        font-size: .75rem;
+
+        letter-spacing: .25em;
+
+    }
+
+
+    .section-indicator {
+
+        width: 8px;
+
+        height: 8px;
+
+    }
+
+
+
+    /* ============================= */
+    /* Hero Sections */
+    /* ============================= */
+
 
     .home,
     .promotions,
     .photography,
     .sound,
     .events {
+
         min-height: 100svh;
+
     }
 
-    /* Hero text */
+
+
+    /* Keep desktop positioning */
 
     .home-content,
     .promotions-content,
@@ -1751,12 +1821,21 @@ h1 {
     .sound-content,
     .events-content {
 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        text-align: center;
+        left: 6vw;
+
+        bottom: 8vh;
+
+        width: auto;
+
+        text-align: left;
+
+        transform: none;
 
     }
+
+
+
+    /* Scale hero titles */
 
     .home-content h1,
     .promotions-content h1,
@@ -1764,20 +1843,46 @@ h1 {
     .sound-content h1,
     .events-content h1 {
 
-        font-size: clamp(2.8rem, 12vw, 4.5rem);
-        line-height: 0.95;
+
+        font-size: clamp(3rem, 10vw, 5rem);
+
+        line-height: .9;
+
+        letter-spacing: -2px;
+
 
     }
+
+
+
+    /* Scale subtitles */
 
     .section-subtitle {
 
-        width: 100%;
-        max-width: 320px;
-        margin: 20px auto 0;
 
-        font-size: 1rem;
-        line-height: 1.5;
+        max-width: 300px;
+
+        margin-top: 15px;
+
+        font-size: .95rem;
+
+        line-height: 1.4;
+
 
     }
+
+
+
+    /* ============================= */
+    /* Video */
+    /* ============================= */
+
+
+    .home-video {
+
+        object-fit: cover;
+
+    }
+
 
 }
