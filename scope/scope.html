@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StobieScope</title>
+
+<!-- Desktop / Main Styles -->
+<link rel="stylesheet" href="../css/styles.css">
+
+
+<!-- Mobile Overrides -->
+<link rel="stylesheet" href="../css/mobile.css">
+
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo-link">
+
+        <img
+            src="../images/headerlogo2.png"
+            alt="Logo"
+            class="logo"
+            data-sound="../audio/logo.wav"
+        >
+
+    </a>
+
+    <div class="scope-title">
+        StobieScope
+    </div>
+
+    <div class="nav-buttons">
+
+
+        <a
+            href="../work/work.html"
+            class="nav-button work-button"
+            data-sound="../audio/button.mp3">
+            work
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="nav-button scope-button"
+            data-sound="../audio/button.mp3">
+            scope
+        </a>
+
+
+        <div class="dropdown">
+
+            <a
+                class="nav-button creative"
+                data-sound="audio/button.mp3">
+                creative
+            </a>
+
+
+            <div class="dropdown-menu">
+
+                <a href="stobiefilm.html">
+                    film
+                </a>
+
+                <a href="stobiestill.html">
+                    photography
+                </a>
+
+                <a href="stobiesound.html">
+                    sound
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="events.html"
+            class="nav-button events-button"
+            data-sound="audio/button.mp3">
+            events
+        </a>
+
+
+        <a
+            href="about.html"
+            class="nav-button about-button"
+            data-sound="audio/button.mp3">
+            about
+        </a>
+
+
+    </div>
+
+
+</nav>
+
+
+
+<main class="scope-page">
+
+
+<section class="scope-hero">
+
+    <div class="scope-slideshow">
+
+        <img src="images/scope1.jpg" class="scope-slide active" alt="">
+        <img src="images/scope2.jpg" class="scope-slide" alt="">
+        <img src="images/scope3.jpg" class="scope-slide" alt="">
+        <img src="images/scope4.jpg" class="scope-slide" alt="">
+        <img src="images/scope5.jpg" class="scope-slide" alt="">
+
+    </div>
+
+    <div class="scope-overlay"></div>
+
+    <div class="scope-dots">
+
+        <button class="scope-dot active"></button>
+        <button class="scope-dot"></button>
+        <button class="scope-dot"></button>
+        <button class="scope-dot"></button>
+        <button class="scope-dot"></button>
+
+    </div>
+
+    <div class="scope-hero-content">
+
+        <h1>Funding: the genius method</h1>
+
+        <p>
+            Jesse Jaegar and the wonders of tax deductions.
+        </p>
+
+    </div>
+
+    <a href="#scope-wall" class="scroll-arrow">
+        ↓
+    </a>
+
+</section>
+
+
+
+<section class="scope-wall" id="scope-wall">
+
+
+    <a href="#" class="scope-card">
+
+        <img src="images/scope4.jpg" alt="">
+
+    </a>
+
+    <a href="#" class="scope-card">
+
+        <img src="images/scope3.jpg" alt="">
+
+    </a>
+
+
+    <a href="#" class="scope-card">
+
+        <img src="images/scope2.jpg" alt="">
+
+    </a>
+
+
+    <a href="#" class="scope-card">
+
+        <img src="images/scope1.jpg" alt="">
+
+    </a>
+
+
+</section>
+
+
+</main>
+
+<script>
+
+const slides = document.querySelectorAll(".scope-slide");
+const dots = document.querySelectorAll(".scope-dot");
+
+let current;
+let autoplay = true;
+
+
+/* Choose random starting image */
+
+current = Math.floor(Math.random() * slides.length);
+
+
+
+function showSlide(index){
+
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    current = index;
+
+}
+
+
+/* Show random starting slide */
+
+showSlide(current);
+
+
+
+/* Automatic slideshow */
+
+let timer = setInterval(()=>{
+
+    if(!autoplay) return;
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    showSlide(current);
+
+},6000);
+
+
+
+/* User selects image */
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        autoplay = false;
+
+        clearInterval(timer);
+
+        showSlide(index);
+
+    });
+
+});
+
+
+</script>
+
+</body>
+
+</html>

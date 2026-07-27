@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StobieCompany</title>
+
+    <!-- Desktop / Main Styles -->
+<link rel="stylesheet" href="../css/styles.css">
+
+
+<!-- Mobile Overrides -->
+<link rel="stylesheet" href="../css/mobile.css">
+
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- Work Background -->
+
+<div class="work-background"></div>
+
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <a href="../" class="logo-link">
+
+        <img
+            src="../images/headerlogo2.png"
+            alt="Logo"
+            class="logo"
+            data-sound="../audio/logo.wav"
+        >
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+
+        <a
+            href="../"
+            class="nav-button work-button"
+            data-sound="audio/button.mp3"
+        >
+            work
+        </a>
+
+        <a
+            href="../scope/scope.html"
+            class="nav-button scope-button"
+            data-sound="../audio/button.mp3"
+        >
+            scope
+        </a>
+
+        <div class="dropdown">
+
+            <a
+                id="nav-button-creative"
+                class="nav-button creative"
+                data-sound="audio/button.mp3"
+            >
+                creative
+            </a>
+
+            <div class="dropdown-menu">
+
+                <a href="stobiefilm.html">film</a>
+
+                <a href="stobiestill.html">photography</a>
+
+                <a href="stobiesound.html">sound</a>
+
+            </div>
+
+        </div>
+
+        <a
+            href="events.html"
+            class="nav-button events-button"
+            data-sound="audio/button.mp3"
+        >
+            events
+        </a>
+
+        <a
+            href="about.html"
+            class="nav-button about-button"
+            data-sound="audio/button.mp3"
+        >
+            about
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- Work Content -->
+
+<main class="page-hero">
+
+    <div class="page-content">
+
+        <h1 class="page-title">
+            Promotions
+        </h1>
+
+        <p class="section-subtitle">
+        
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- Hover Sounds -->
+
+<script>
+
+    // Play a hover sound for every element with a data-sound attribute
+
+    const soundElements = document.querySelectorAll("[data-sound]");
+
+    soundElements.forEach(element => {
+
+        const sound = new Audio(element.dataset.sound);
+
+        element.addEventListener("mouseenter", () => {
+
+            sound.currentTime = 0;
+
+            sound.play().catch(() => {});
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>
