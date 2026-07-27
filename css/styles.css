@@ -93,11 +93,9 @@ body {
 /* Logo */
 
 .logo {
-
-    width: 112px;
-
+    display: block;
+    max-width: 100%;
     height: auto;
-
 }
 
 
@@ -1735,7 +1733,10 @@ h1 {
 
     .navbar {
 
-        padding: 20px;
+        padding: 15px;
+        gap: 10px;
+        max-width: 100%;
+        overflow: hidden;
 
     }
 
@@ -1743,24 +1744,27 @@ h1 {
     .logo {
 
         height: 38px;
+        width: auto;
+        object-fit: contain;
 
     }
 
 
     .nav-buttons {
 
-        gap: 8px;
+        gap: 5px;
+        flex-shrink: 1;
 
     }
 
 
     .nav-button {
 
-        width: 60px;
+        width: 45px;
 
-        height: 60px;
+        height: 45px;
 
-        font-size: .75rem;
+        font-size: .65rem;
 
     }
 
