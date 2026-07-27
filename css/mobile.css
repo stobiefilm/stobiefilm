@@ -92,7 +92,7 @@
 
 
 
-   /* ============================= */
+/* ============================= */
 /* Creative Dropdown */
 /* ============================= */
 
@@ -110,11 +110,8 @@
 
     top:calc(100% + 8px);
 
-    right:0;
-
-    left:auto;
-
-    transform:none;
+    left:0;
+    right:auto;
 
     display:none;
 
@@ -148,7 +145,7 @@
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     padding:8px 12px;
 
@@ -157,6 +154,17 @@
     font-size:clamp(.5rem,2vw,.75rem);
 
     white-space:nowrap;
+
+}
+
+/* ========================================= */
+/* Section Navigation Alignment */
+/* ========================================= */
+
+
+.section-nav {
+
+    left:clamp(15px,4vw,40px);
 
 }
 
