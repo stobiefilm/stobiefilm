@@ -198,9 +198,9 @@
 
 </main>
 
+<script src="../js/audio.js"></script> 
+    
 <script>
-
-<script src="../js/audio.js"></script
 
 const slides = document.querySelectorAll(".scope-slide");
 const dots = document.querySelectorAll(".scope-dot");
@@ -286,8 +286,13 @@ creativeButton.addEventListener("click", function(e) {
     dropdown.classList.toggle("open");
 
 });
-
     
+/* close dropdown when clicking elsewhere */
+document.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+    }
+});    
     
 </script>    
 
