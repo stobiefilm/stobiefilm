@@ -1683,42 +1683,108 @@ h1 {
 
 
 
+/* ========================================= */
 /* Mobile */
-
+/* ========================================= */
 
 @media (max-width: 900px) {
 
+    /* Existing */
 
     .film-showcase {
-
         flex-direction: column;
-
         align-items: flex-start;
-
     }
-
 
     .trailer-container {
-
         width: 100%;
-
     }
-
 
     .film-details {
-
         flex-direction: column;
-
         gap: 30px;
-
     }
-
 
     .still-gallery {
-
         grid-template-columns: 1fr;
+    }
+
+
+    /* ============================= */
+    /* Homepage */
+    /* ============================= */
+
+    /* Hide left section navigation */
+
+    .section-nav {
+        display: none;
+    }
+
+    /* Smaller navbar */
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .logo {
+        height: 34px;
+    }
+
+    .nav-buttons {
+        gap: 8px;
+    }
+
+    .nav-button {
+        width: 56px;
+        height: 56px;
+        font-size: 0.8rem;
+    }
+
+    /* Hero sections */
+
+    .home,
+    .promotions,
+    .photography,
+    .sound,
+    .events {
+        min-height: 100svh;
+    }
+
+    /* Hero text */
+
+    .home-content,
+    .promotions-content,
+    .photography-content,
+    .sound-content,
+    .events-content {
+
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
 
     }
 
+    .home-content h1,
+    .promotions-content h1,
+    .photography-content h1,
+    .sound-content h1,
+    .events-content h1 {
+
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+        line-height: 0.95;
+
+    }
+
+    .section-subtitle {
+
+        width: 100%;
+        max-width: 320px;
+        margin: 20px auto 0;
+
+        font-size: 1rem;
+        line-height: 1.5;
+
+    }
 
 }
